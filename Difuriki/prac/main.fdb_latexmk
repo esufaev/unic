@@ -1,11 +1,11 @@
 # Fdb version 4
-["pdflatex"] 1735650538 "/home/pod/Projects/unic/Difuriki/prac/main.tex" "main.pdf" "main" 1735650539 0
+["pdflatex"] 1735736005 "/home/pod/Projects/unic/Difuriki/prac/main.tex" "main.pdf" "main" 1735736006 0
   "/etc/texmf/web2c/texmf.cnf" 1735310437 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/pod/.texlive2022/texmf-var/fonts/tfm/lh/lh-t2a/labx1200.tfm" 1735589724 3308 eee81981029f67083258db36df06e523 ""
   "/home/pod/.texlive2022/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm" 1735587870 3304 6a543c07045572737981351171e0505e ""
   "/home/pod/.texlive2022/texmf-var/fonts/tfm/lh/lh-t2a/larm1200.tfm" 1735587847 3240 c2435f2b5cd66d4930bc29b8df87967e ""
   "/home/pod/.texlive2022/texmf-var/fonts/tfm/lh/lh-t2a/larm1440.tfm" 1735587865 3256 3daaa33cf35cf3f354983aa3214ecd7f ""
-  "/home/pod/Projects/unic/Difuriki/prac/main.tex" 1735646081 1840 8581bba5e6c952aab4201e4c68da9e83 ""
+  "/home/pod/Projects/unic/Difuriki/prac/main.tex" 1735671748 1866 bffd1be69269f31dca0ab165fa9abe5b ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -137,9 +137,10 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1735587704 7882269 c5b6fa7217a9a55ed8b98191b4e523a4 ""
   "homework/1104.tex" 1735645627 1357 fdc0c838797ad9f03bf67e823aba7997 ""
   "homework/1106.tex" 1735644792 1185 d04983aa44068826be966feecca87309 ""
-  "homework/1109.tex" 1735650538 1758 8f0140e10bd3ff11a9b362c14978796b ""
-  "main.aux" 1735650539 132 655c6400fc15544b7f70031f0cd5d0d5 "pdflatex"
-  "main.tex" 1735646081 1840 8581bba5e6c952aab4201e4c68da9e83 ""
+  "homework/1109.tex" 1735651300 1758 8f0140e10bd3ff11a9b362c14978796b ""
+  "homework/1110.tex" 1735736005 2193 d2877bcdc3da4361d4c9b3b7805e777a ""
+  "main.aux" 1735736006 132 61e1bedc8c7da8c5fef50fe149ac19c1 "pdflatex"
+  "main.tex" 1735671748 1866 bffd1be69269f31dca0ab165fa9abe5b ""
   (generated)
   "main.aux"
   "main.log"
