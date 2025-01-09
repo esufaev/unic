@@ -1,0 +1,54 @@
+\section*{Задача 900}
+С помощью теоремы Ляпунова об устойчивости по первому приближению исследовать на устойчивость нулевое решение
+$$\begin{cases}
+\dot{x} = x^2 + y^2 - 2x \\
+\dot{y} = 3x^2 - x + 3y.
+\end{cases}
+$$
+
+\begin{solution}
+   $$ A = \begin{pmatrix}
+      -2 & 0 \\
+      -1 & 3 \\
+   \end{pmatrix} $$
+   $$\begin{vmatrix}
+    -2 - \lambda & 0 \\ 
+    -1 & 3 - \lambda \\
+   \end{vmatrix} = 0$$
+   $$ -(2 + \lambda)(3 - \lambda) = 0   $$
+   $$\lambda_{1, 2} = -2, 3 => \lambda_{1,2} = -2, 3 => \text{решение не устойчиво} $$
+
+\end{solution}
+
+\section*{Задача 902}
+С помощью теоремы Ляпунова об устойчивости по первому приближению исследовать на устойчивость нулевое решение
+$$
+\begin{cases}
+\dot{x} = \ln{(4y + e^{-3x})} \\
+\dot{y} = 2y - 1 + \sqrt[3]{1 - 6x}
+\end{cases}
+$$
+\begin{solution}
+   Матрица первого приближения: $$ \tilde{A} = \begin{pmatrix}
+      \dfrac{\delta f_1}{\delta x} & \dfrac{\delta f_1}{\delta y} \\
+      \dfrac{\delta f_2}{\delta x} & \dfrac{\delta f_2}{\delta y} \\
+   \end{pmatrix} = \begin{pmatrix}
+      -\dfrac{3}{4ye^{3x} + 1} & \dfrac{4e^{3x}}{4ye^{3x} + 1} \\
+      -\dfrac{2}{\sqrt[3]{(1 - 6x)^2}} & 2 \\
+   \end{pmatrix}$$
+   $$ A_{(0, 0)} = \begin{pmatrix} 
+      -3 & 4 \\
+      -2 & 2 \\
+   \end{pmatrix} $$
+
+   $$ |A_{(0, 0)} - \lambda E| = \begin{vmatrix}
+      -3 - \lambda & 4 \\
+      -2 & 2 - \lambda \\
+   \end{vmatrix} = -(3 + \lambda)(2 - \lambda) + 8 = 0 $$
+   $$ \lambda^2 + \lambda + 2 = 0 $$
+   $$ D = 1 - 4 \cdot 2 = -7 $$
+   $$ \lambda_{1, 2} = \dfrac{-1 \pm \sqrt{7} \cdot i}{2} = -\dfrac{1}{2} \pm \dfrac{\sqrt{7} i}{2} => $$
+
+   => решение устойчиво.
+   
+\end{solution}\pagebreak
