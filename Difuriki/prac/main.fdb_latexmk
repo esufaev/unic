@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1736454449 "/home/pod/Projects/unic/Difuriki/prac/main.tex" "main.pdf" "main" 1736454450 0
+["pdflatex"] 1736507516 "/home/pod/Projects/unic/Difuriki/prac/main.tex" "main.pdf" "main" 1736507518 0
   "/etc/texmf/web2c/texmf.cnf" 1735310437 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/pod/.texlive2022/texmf-var/fonts/tfm/lh/lh-t2a/labx1200.tfm" 1735589724 3308 eee81981029f67083258db36df06e523 ""
   "/home/pod/.texlive2022/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm" 1735587870 3304 6a543c07045572737981351171e0505e ""
@@ -7,7 +7,7 @@
   "/home/pod/.texlive2022/texmf-var/fonts/tfm/lh/lh-t2a/larm0800.tfm" 1735587861 3240 04766e423166ba63b7fbbf132b8618cb ""
   "/home/pod/.texlive2022/texmf-var/fonts/tfm/lh/lh-t2a/larm1200.tfm" 1735587847 3240 c2435f2b5cd66d4930bc29b8df87967e ""
   "/home/pod/.texlive2022/texmf-var/fonts/tfm/lh/lh-t2a/larm1440.tfm" 1735587865 3256 3daaa33cf35cf3f354983aa3214ecd7f ""
-  "/home/pod/Projects/unic/Difuriki/prac/main.tex" 1736452584 1989 092250286ea5a645faae25db4e8eccd5 ""
+  "/home/pod/Projects/unic/Difuriki/prac/main.tex" 1736506600 2089 29eec6af20e6243b04d754ea0bd63125 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -137,6 +137,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1681034085 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1735587558 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1735587704 7882269 c5b6fa7217a9a55ed8b98191b4e523a4 ""
+  "graph/976.png" 1736505581 102780 fdf51a9284ed033a5cff99de612b44e9 ""
+  "graph/980.png" 1736506937 54213 6462e52dcc5bee04c73374de1ff772e0 ""
   "homework/1104.tex" 1735645627 1357 fdc0c838797ad9f03bf67e823aba7997 ""
   "homework/1106.tex" 1735644792 1185 d04983aa44068826be966feecca87309 ""
   "homework/1109.tex" 1735651300 1758 8f0140e10bd3ff11a9b362c14978796b ""
@@ -144,10 +146,15 @@
   "homework/1114.tex" 1736370195 2043 4b9ff2cc368f93a08ff1998140e487e6 ""
   "homework/900-902.tex" 1736449178 1909 c808972c759b12afe1c8e760b50214ae ""
   "homework/916.tex" 1736452573 1273 2bc1c636e82525b58b9e5b7a8dacfb91 ""
-  "homework/918.tex" 1736454449 1451 cc654ff9b7895bc9d57afcac4f929dc3 ""
-  "main.aux" 1736454450 132 c2301647373dfb03b18672530c16246e "pdflatex"
-  "main.tex" 1736452584 1989 092250286ea5a645faae25db4e8eccd5 ""
+  "homework/918.tex" 1736454788 1461 2ac25c6232b2944705a1321a63b5ece8 ""
+  "homework/962-973.tex" 1736462555 1222 21f5a2529322f8f77fe73dec8116148e ""
+  "homework/976.tex" 1736506505 806 f04d2b5ce51b72c64e5aeeef2ef97156 ""
+  "homework/980.aux" 1736507518 573 ae7d0d4c0700ad42be2c31c7c2ecd6bd "pdflatex"
+  "homework/980.tex" 1736507516 844 883aca8a3165833153bdadee7bf139e0 ""
+  "main.aux" 1736507518 186 7cf8b20323b21cd262c3da34b26d0203 "pdflatex"
+  "main.tex" 1736506600 2089 29eec6af20e6243b04d754ea0bd63125 ""
   (generated)
+  "homework/980.aux"
   "main.aux"
   "main.log"
   "main.pdf"
