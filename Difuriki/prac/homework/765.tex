@@ -1,0 +1,49 @@
+\section*{Номер 765}
+
+\begin{solution}
+    $$ y'' + y = f(x) \quad y = C_1 \cos x + C_2 \sin x $$
+    $$ G(x, s) = A(s) \cos x + B(s) \sin x \text{, где  $0 \leq x \leq s$} $$
+    $$ G'(0,s) = 0 $$
+    $$ A(s)\sin(0) + B(s)\cos(0) = 0 \Rightarrow B(s) = 0 $$
+    $$ G(x,s) = A(s) \cos(x) $$
+
+    при $ s \leq x \leq \pi $.
+
+    $$ G(x,s) = C(s) \cos(x) + D(s) \sin(x) $$
+    $$ G(\pi,s) = 0: \quad C(s) \cos(\pi) + D(s) \sin(\pi) = 0 $$
+    $$ C(s) = 0 $$
+    $$ G(x,s) = D(s) \sin(x) $$
+    $$ A(s) \cos(x) = D(s) \sin(x) $$
+    $$ G'(s+0,s) - G(s-0,s) = 1 $$
+
+    \begin{itemize}
+        \item
+              $$ D(s) \cos(s) = -A(s) \sin(s) = 1 $$
+              $$ D(s) \cos(s) + A(s) \sin(s) = 1 $$
+        \item
+              $$
+                  \begin{cases}
+                      A(s) \cos(s) - D(s) \sin(s) = 1 \\
+                      D(s) \cos(s) + A(s) \sin(s) = 1
+                  \end{cases}
+              $$
+              Преобразуем:
+              $$ A(s) \cos(s) + D(s) \cos^2(s) + A(s) \sin^2(s) = \cos(s) $$
+              $$ A(s) (\sin^2(s) + \cos^2(s)) = \cos(s) $$
+              $$ A(s) = \cos(s) $$
+        \item
+              $$ A(s) \cos(s) = D(s) \sin(s) \Rightarrow A(s) = \sin(s) $$
+              $$ D(s) = \cos(s) $$
+    \end{itemize}
+
+    \textbf{Ответ:}
+
+    $$
+        G(x,s) =
+        \begin{cases}
+            \sin(s) \cos(x), \quad 0 \leq x \leq s, \\
+            \cos(s) \sin(x), \quad s < x \leq \pi.
+        \end{cases}
+    $$
+
+\end{solution}\pagebreak
