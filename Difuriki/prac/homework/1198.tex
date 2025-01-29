@@ -1,0 +1,35 @@
+\section*{Номер 1198}
+
+$$
+    \begin{cases}
+        x \cdot \dfrac{\delta z}{\delta x} - y \cdot \dfrac{\delta z}{\delta y} = z^2 \cdot (x - 3y) \\
+        x = 1                                                                                        \\
+        yz + 1 = 0
+    \end{cases}
+$$
+
+\begin{solution}
+    $$ \dfrac{dx}{x} = \dfrac{dy}{-y} = \dfrac{dz}{z^2 (x - 3y)} $$
+    \begin{itemize}
+        \item
+              $$ \int \dfrac{dx}{x} = \int \dfrac{dy}{-y}; \quad e^{\ln|x| + ln|y|} = e^{\ln C_1} $$
+              $$ xy = C_1 $$
+        \item
+              $$ \dfrac{dy}{-y} = \dfrac{dz}{z^2 (x - 3y)}; \quad (x - 3y) \cdot \dfrac{dy}{-y} = \dfrac{dz}{z^2} $$
+              $$ \int (-\dfrac{C_1}{y^2} + 3) \cdot dy = \int \dfrac{dz}{z^2} $$
+              $$ \dfrac{C_1}{y} + 3y = - \dfrac{1}{z} + C_2 $$
+        \item
+              $$
+                  \begin{cases}
+                      C_1 = yx \quad=>\quad y \\
+                      C_2 = 1 + 2 C_1         \\
+                      x = 1                   \\
+                      y = - \dfrac{1}{z}
+                  \end{cases}
+              $$
+    \end{itemize}
+    Получается, что $ C_1 = xy $ и $ C_2 = 1 + 2C_1 = x + 3y + \dfrac{1}{z} = 1 + 2xy $. \par
+    \textbf{Ответ: $ 2xy + 1 = x + 3y + \dfrac{1}{z} $}
+
+\end{solution}
+
