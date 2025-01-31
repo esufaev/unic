@@ -54,7 +54,7 @@ namespace pot
                     if (handle && !handle.done() && !handle_is_busy)
                     {
                         handle.resume();
-                    } 
+                    }
                     handle.promise().m_is_resuming.clear(std::memory_order_release); 
                 });
 

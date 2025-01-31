@@ -5,39 +5,35 @@
 #include <cassert>
 
 #include "parfor.h"
+#include "this_thread.h"
 
 pot::coroutines::task<int> async_computation_1(int value)
 {
-    printf("Starting coroutine 1... This thread: %ull\n\r", std::this_thread::get_id());
-
-    std::this_thread::sleep_for(std::chrono::seconds(2));
-
-    int result = value * 2;
+    // printf("Coroutine 1 starting on thread: %ull \n\r", static_cast<unsigned long long>(pot::this_thread::system_id()));
+    pot::this_thread::sleep_for(std::chrono::seconds(3));
+    int result = value * 5;
+    pot::this_thread::sleep_for(std::chrono::seconds(3));
     printf("Coroutine 1 finished with result: %d\n\r", result);
+    pot::this_thread::sleep_for(std::chrono::seconds(3));
     co_return result;
 }
 
 pot::coroutines::task<int> async_computation_2(int value)
 {
-    printf("Starting coroutine 2... This thread: %ull\n\r", std::this_thread::get_id());
-
-    std::this_thread::sleep_for(std::chrono::seconds(2));
-
+    // printf("Coroutine 2 starting on thread: %ull \n\r", static_cast<unsigned long long>(pot::this_thread::system_id()));
     int result = co_await async_computation_1(value);
+    pot::this_thread::sleep_for(std::chrono::seconds(3));
     printf("Coroutine 2 finished with result: %d\n\r", result);
     co_return result;
 }
 
 int main()
 {
-    printf("Main thread: %ull\n\r", std::this_thread::get_id());
-
-    pot::executors::thread_pool_executor_lq executor("Main");
+    pot::executors::thread_pool_executor_lq executor("main");
 
     auto future = executor.run(async_computation_2, 5);
-
-    std::this_thread::sleep_for(std::chrono::seconds(5));
     printf("Waiting...\n\r");
+    pot::this_thread::sleep_for(std::chrono::seconds(3));
 
     printf("RESULT: %d\n\r", future.get());
 

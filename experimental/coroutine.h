@@ -70,7 +70,6 @@ namespace pot::tasks::details
             if constexpr (!std::is_void_v<T>)
             {
                 return std::get<T>(m_data);
-
             }
         }
 
@@ -225,11 +224,6 @@ namespace pot::coroutines
             {
                 m_handle.destroy();
             }
-            // if(m_handle && m_handle.promise().m_continuation)
-            // {
-            //     m_handle.promise().m_continuation.destroy();
-            //     m_handle.destroy();
-            // }
         }
 
         bool await_ready() const noexcept
