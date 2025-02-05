@@ -9,7 +9,6 @@
 
 pot::coroutines::task<int> async_computation_1(int value)
 {
-    // printf("Coroutine 1 starting on thread: %ull \n\r", static_cast<unsigned long long>(pot::this_thread::system_id()));
     pot::this_thread::sleep_for(std::chrono::seconds(3));
     int result = value * 5;
     pot::this_thread::sleep_for(std::chrono::seconds(3));
@@ -20,7 +19,6 @@ pot::coroutines::task<int> async_computation_1(int value)
 
 pot::coroutines::task<int> async_computation_2(int value)
 {
-    // printf("Coroutine 2 starting on thread: %ull \n\r", static_cast<unsigned long long>(pot::this_thread::system_id()));
     int result = co_await async_computation_1(value);
     pot::this_thread::sleep_for(std::chrono::seconds(3));
     printf("Coroutine 2 finished with result: %d\n\r", result);

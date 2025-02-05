@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.12.30)  30 JAN 2025 01:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.12.30)  6 FEB 2025 00:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -609,47 +609,47 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-)) (./homework/1104.tex
-LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+)) (./homework/52-54-67.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)) (./homework/1106.tex [1
+) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./homework/1110.tex [2]) [3] (./homework/1109.tex) [4] (./homework/1114.tex
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) [2] (./homework/102-114-121.tex [3] [4]) [5] (./homework/140-149-155.tex [6] [7]) [8] (./homework/252-268-270.tex [9] [10]) [11] (./homework/212-257-274.tex) [12] (./homework/303-305-307-309.tex [13] [14]) (./homework/1104.tex) (./homework/1106.tex [15]) (./homework/1110.tex [16]) [17] (./homework/1109.tex) [18] (./homework/1114.tex
 Overfull \hbox (10.10698pt too wide) detected at line 5
 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 k \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 \OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 k \OT1/cmr/m/n/12 + \OML/cmm/m/it/12  \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 1)\OML/cmm/m/it/12 x[]y[] \OT1/cmr/m/n/12 + 2 [](\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 \OT1/cmr/m/n/12 )\OML/cmm/m/it/12 x[]y[] \OMS/cmsy/m/n/12 ^^@ [] \OML/cmm/m/it/12 x[]y[] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 2 [] \OML/cmm/m/it/12 x[]y[] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 2 [] \OML/cmm/m/it/12 x[]y[];
  []
 
-) [5] (./homework/900-902.tex) [6] (./homework/916.tex) [7] (./homework/918.tex) [8] (./homework/962-973.tex) [9] (./homework/976.tex
-<graph/976.png, id=45, 722.7pt x 699.5736pt>
+) [19] (./homework/900-902.tex) [20] (./homework/916.tex) [21] (./homework/918.tex) [22] (./homework/962-973.tex) [23] (./homework/976.tex
+<graph/976.png, id=91, 722.7pt x 699.5736pt>
 File: graph/976.png Graphic file (type png)
 <use graph/976.png>
 Package pdftex.def Info: graph/976.png  used on input line 20.
 (pdftex.def)             Requested size: 398.34009pt x 385.58861pt.
-) [10 <./graph/976.png>] (./homework/980.tex
-<graph/980.png, id=51, 433.62pt x 433.62pt>
+) [24 <./graph/976.png>] (./homework/980.tex
+<graph/980.png, id=97, 433.62pt x 433.62pt>
 File: graph/980.png Graphic file (type png)
 <use graph/980.png>
 Package pdftex.def Info: graph/980.png  used on input line 26.
 (pdftex.def)             Requested size: 398.34009pt x 398.3596pt.
-) (./homework/1145.tex [11 <./graph/980.png>]) [12] (./homework/1153.tex) [13] (./homework/1163.tex) [14] (./homework/1180-1182.tex) [15] (./homework/1198.tex [16]) (./homework/1181-1183.tex) [17] (./homework/1201.tex) [18] (./homework/772.tex) [19] (./homework/765.tex) [20] (./homework/770.tex [21]) (./main.aux) ) 
+) (./homework/1145.tex [25 <./graph/980.png>]) [26] (./homework/1153.tex) [27] (./homework/1163.tex) [28] (./homework/1180-1182.tex) [29] (./homework/1198.tex [30]) (./homework/1181-1183.tex) [31] (./homework/1201.tex) [32] (./homework/772.tex) [33] (./homework/765.tex) [34] (./homework/770.tex [35]) (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 14769 strings out of 476091
- 289302 string characters out of 5794080
+ 14799 strings out of 476091
+ 290033 string characters out of 5794080
  1863330 words of memory out of 5000000
- 34834 multiletter control sequences out of 15000+600000
+ 34846 multiletter control sequences out of 15000+600000
  522765 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,13n,104p,476b,315s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t2a.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (21 pages, 295571 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t2a.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on main.pdf (35 pages, 349376 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
+ 195 PDF objects out of 1000 (max. 8388607)
+ 125 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

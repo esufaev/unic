@@ -1,0 +1,127 @@
+\section*{Номер 102}
+
+$$ (x - y) dx + (x + y) dy = 0 $$
+
+\begin{solution}
+    1) Проверерим на однородность: $x, y \rightarrow kx, ky$ \par
+    $$ (kx - ky) dx + (kx + ky) dy = 0 $$
+    $$ k[(x - y) dx + (x + y) dy] = 0 $$
+
+    2) Замена $z = \dfrac{y}{x} \Rightarrow y = zx \Rightarrow dy = zdx + xdz$ \par
+    $$ (x - zx) dx + (x + zx) \cdot (zdx + xdz) = 0 $$
+    $$ xdx - zxdx + xzdx + x^2 dz + z^2 xdx + x^2 zdz = 0 $$
+
+    $$ (x + x^2 z) dx + (x^2 + x^2 z) dz = 0 $$  
+    Преобразуем:  
+    $$ x(1 + z^2) dx + x^2(1 + z^2) dz = 0 $$  
+    Разделяем переменные:  
+    $$ \int \frac{dx}{x} = - \int \frac{1 + \frac{z}{1 + z^2} dz}{1 + z^2} $$  
+    
+    Распишем правую часть:  
+    $$ \int \frac{dx}{x} = - \int \frac{z}{1 + z^2} dz - \int \frac{1}{1 + z^2} dz $$  
+    Решение интегралов:  
+    $$ \int \frac{z}{1 + z^2} dz = \frac{1}{2} \ln(1 + z^2), \quad \int \frac{dz}{1 + z^2} = \arctg z $$  
+    Получаем:  
+    $$ C + \ln |x| = -\arctg z - \frac{1}{2} \ln(1 + z^2) $$  
+    Возводим в экспоненту:  
+    $$ e^{C + \ln |x|} = e^{-\arctg z - \frac{1}{2} \ln(1 + z^2)} $$  
+    $$ C + \ln |x| = -\arctg \frac{y}{x} - \frac{1}{2} \ln \left( 1 + \frac{y^2}{x^2} \right) $$  
+    $$ C - 2 \ln |x| = 2 \arctg \frac{y}{x} + \ln \left( \frac{x^2 + y^2}{x^2} \right) $$  
+    $$ \ln (x^2 + y^2) - \ln x^2 = \ln (x^2 + y^2) - 2 \ln x $$  
+    $$ 2 \arctg \frac{y}{x} + \ln (x^2 + y^2) = C + 2 \ln |x| - 2 \ln x $$  
+    \textbf{Итоговое общее решение: } 
+    $$ \ln (x^2 + y^2) = C - \arctg \frac{y}{x} $$  
+    
+    Проверяем условия:  
+    $$ x^2 = 0, \quad 1 + z^2 = 0 $$  
+    Поскольку решений нет, записываем:  
+    $$ \text{Нет решений.} $$
+\end{solution}
+
+\section*{Задача 114}
+$$ (2x + y + 1)dx - (4x + 2y - 3) dy = 0 $$
+
+\begin{solution}
+    Проверяем однородность:  
+    $$ 2xy + 4x + y + 1 = 0 $$  
+    $$ y = -2x - 1 $$  
+    $$ 4x + 2y + 3 = 0 $$  
+    Подставляя $y = -2x - 1$:  
+    $$ 4x + 2(-2x - 1) + 3 = 0 $$  
+    $$ 4x - 4x - 2 + 3 = 0 $$  
+    $$ 1 \neq 0, \quad \text{нет решений.} $$  
+
+    \textbf{Прямые не пересекаются.}  
+
+    Рассмотрим уравнение:  
+    $$ \frac{dy}{dx} = \frac{2x + y + 1}{4x + 2y - 3} $$  
+    Введём замену:  
+    $$ z = 2x + y, \quad dz = 2dx + dy $$  
+    Тогда:  
+    $$ dz - 2dx = \frac{2x + y + 1}{4x + 2y - 3} dx $$  
+    $$ \frac{dz}{dx} = \frac{2x + y + 1}{4x + 2y - 3} + 2 $$  
+    Выразим через $z$:  
+    $$ z' = \frac{z + 1}{2z - 3} $$  
+
+    Решаем методом разделяющихся переменных:  
+    $$ \frac{dz}{dx} = \frac{5(z - 1)}{2z - 3} $$  
+    $$ \int \frac{2z - 3}{z - 1} dz = \int 5dx $$  
+    Разбиваем дробь:  
+    $$ \int 2 \frac{z - 1}{z - 1} dz - \int \frac{dz}{z - 1} = \int 5 dx $$  
+    $$ \int 2 dz - \int \frac{dz}{z - 1} = \int 5 dx $$  
+    $$ 2z - \ln |z - 1| = 5x + C $$  
+    Возвращаемся к $z$:  
+    $$ 2(2x + y) - \ln |2x + y - 1| = 5x + C $$  
+    $$ 4x + 2y - \ln |2x + y - 1| = 5x + C $$  
+    $$ 2x + y - 1 = e^{\frac{C - 5x}{2}} $$  
+
+    Общее решение:  
+    $$ 2x + y + 1 = C_3 e^{2y - x} $$  
+\end{solution}\pagebreak
+
+\section*{Номер 121}
+
+$$ x^3 \left( y' - x \right) = y^2 $$
+
+\begin{solution}
+    Проверим на однородность:  
+    $$ x^3 \frac{dy}{dx} = y^2 $$  
+    Неоднородное, так как при $x, y \to kx, ky$ не было бы явного $x$.  
+
+    1) Замена:  
+    $$ y = z x^m $$  
+
+    Подставляем:  
+    $$ x^3 \left( m z x^{m-1} + x^m z' - x \right) = z^2 x^{2m} $$  
+    Уравнение будет однородным, если:  
+    $$ 2m = 3 + m + 1 \Rightarrow m = 2 $$  
+
+    2) Подставим $m = 2$:  
+    $$ x^3 \left( 2z x + x^2 z' - x \right) = z^2 x^4 $$  
+
+    Теперь уравнение однородное.  
+
+    3) Введём замену:  
+    $$ t = x, \quad z = \frac{y}{x^2} $$  
+    Тогда:  
+    $$ dz = \frac{dy}{x^2} - \frac{2y dx}{x^3} $$  
+    Подставляем:  
+    $$ dz = \frac{dx}{x} + x z' $$  
+
+    Преобразуем уравнение:  
+    $$ z' = -t + x L' $$  
+
+    Решаем методом разделяющихся переменных:  
+    $$ 2t + 2t x' - t^4 = 0 $$  
+    $$ 2t dx + 2t x^2 dx - t^4 dx = 0 $$  
+    $$ 2t dt = (t^4 - 2t) dx $$  
+    $$ 2t dt = (t^2 - 1) dx $$  
+
+    Итоговое уравнение с разделяющимися переменными:  
+    $$ \int \frac{2t dt}{(t^2 - 1)} = \int dx $$  
+
+    Решение в общем виде:  
+    $$ (x^2 - y) \ln C x = x^2 \text{ - общее решение.} $$  
+\end{solution}
+
+\pagebreak
