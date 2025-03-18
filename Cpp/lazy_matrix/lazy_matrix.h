@@ -37,6 +37,13 @@ namespace ias
             return *this;
         }
 
+        template <typename _RHS>
+        lazy_matrix &operator=(const _RHS &other)
+        {
+            *this = other.eval();
+            return *this;
+        }
+
         lazy_matrix &operator=(lazy_matrix &&other) noexcept
         {
             if (this != &other)
@@ -54,6 +61,18 @@ namespace ias
         auto operator+(const _RHS &rhs)
         {
             return operation(*this, rhs, OperationType::Add);
+        }
+
+        template <typename _RHS>
+        auto operator-(const _RHS &rhs)
+        {
+            return operation(*this, rhs, OperationType::Subtract);
+        }
+
+        template <typename _RHS>
+        auto operator*(const _RHS &rhs)
+        {
+            return operation(*this, rhs, OperationType::Mult);
         }
 
         void print() const
