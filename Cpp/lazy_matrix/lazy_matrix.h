@@ -160,7 +160,7 @@ public:
         }
     }
 
-    // lazy_matrix eval() const { return *this; }
+    lazy_matrix eval() const { return *this; }
 
     size_t get_rows() const { return rows; }
     size_t get_cols() const { return cols; }
@@ -176,8 +176,8 @@ template <typename LHS, typename RHS>
         return try_eval(m_lhs) + try_eval(m_rhs);
     else if (m_op == OperationType::Subtract)
         return try_eval(m_lhs) - try_eval(m_rhs);
-    // else 
-    //     return try_eval(m_lhs) * try_eval(m_rhs);
+    else 
+        return try_eval(m_lhs) * try_eval(m_rhs);
 }
 
 template <typename LHS, typename RHS>
@@ -217,6 +217,7 @@ operation<LHS, RHS>::operator lazy_matrix() const
         {
             throw std::invalid_argument("Matrix dimensions are not compatible for multiplication.");
         }
+        printf("mult\n");
 
         lazy_matrix result(lhs.get_rows(), rhs.get_cols());
 

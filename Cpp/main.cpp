@@ -2,15 +2,10 @@
 #include <vector>
 #include <functional>
 #include <math.h>
+#include <utility> 
 
 namespace ias
 {
-    struct Point
-    {
-        double x;
-        double y;
-    };
-
     class koef
     {
     public:
@@ -24,15 +19,15 @@ namespace ias
              const std::vector<double> &b) : m_c(c), m_a(a), m_b(b), s(m_c.size()) {}
     };
 
-    [[nodiscard]] std::vector<Point> runge_kutta(
+    [[nodiscard]] std::vector<std::pair<double, double>> runge_kutta(
         std::function<double(double, double)> func,
         double x0, double y0,
         double x_end,
         double h,
         const koef &table)
     {
-        std::vector<Point> solution;
-        Point current = {x0, y0};
+        std::vector<std::pair<double, double>> solution;
+        std::pair<double, double> current = {x0, y0};
         solution.push_back(current);
 
         int steps = static_cast<int>((x_end - x0) / h);
@@ -43,8 +38,8 @@ namespace ias
 
             for (int i = 0; i < table.s; i++)
             {
-                double arg_x = current.x + table.m_c[i] * h;
-                double arg_y = current.y;
+                double arg_x = current.first + table.m_c[i] * h;
+                double arg_y = current.second;
 
                 for (int m = 0; m < i; m++)
                 {
@@ -54,13 +49,13 @@ namespace ias
                 k[i] = func(arg_x, arg_y);
             }
 
-            double y_next = current.y;
+            double y_next = current.second;
             for (int i = 0; i < table.s; i++)
             {
                 y_next += h * table.m_b[i] * k[i];
             }
 
-            double x_next = current.x + h;
+            double x_next = current.first + h;
             current = {x_next, y_next};
             solution.push_back(current);
         }
@@ -92,7 +87,7 @@ int main()
     std::cout << "x\t\ty" << std::endl;
     for (const auto &point : solution)
     {
-        printf("X: %10f, Y: %10f\n", point.x, point.y);
+        printf("X: %10f, Y: %10f\n", point.first, point.second);
     }
 
     return 0;

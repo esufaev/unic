@@ -17,7 +17,7 @@ int main()
     lm4(0, 0) = 5.0;
     lm4(2, 2) = 1.0;
 
-    auto a = lm1 + lm2 - lm3 + lm4;
+    auto a = lm4 * ((lm1 + lm2) - lm3);
     lazy_matrix res = a.eval();
     
     res.print();
