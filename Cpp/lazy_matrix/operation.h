@@ -60,16 +60,17 @@ public:
 
     [[nodiscard]] lazy_matrix eval() const
     {
-        switch (m_op)
-        {
-        case OperationType::Add:
-            return try_eval(m_lhs) + try_eval(m_rhs);
-        case OperationType::Subtract:
-            return try_eval(m_lhs) - try_eval(m_rhs);
-        case OperationType::Mult:
-            return try_eval(m_lhs) * try_eval(m_rhs);
-        }
-        throw std::runtime_error("Invalid operation type");
         return lazy_matrix();
+        
+        // switch (m_op)
+        // {
+        // case OperationType::Add:
+        //     return try_eval(m_lhs) + try_eval(m_rhs);
+        // case OperationType::Subtract:
+        //     return try_eval(m_lhs) - try_eval(m_rhs);
+        // case OperationType::Mult:
+        //     return try_eval(m_lhs) * try_eval(m_rhs);
+        // }
+        throw std::runtime_error("Invalid operation type");
     }
 };

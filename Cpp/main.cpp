@@ -24,7 +24,7 @@ namespace ias
              const std::vector<double> &b) : m_c(c), m_a(a), m_b(b), s(m_c.size()) {}
     };
 
-    std::vector<Point> runge_kutta(
+    [[nodiscard]] std::vector<Point> runge_kutta(
         std::function<double(double, double)> func,
         double x0, double y0,
         double x_end,
