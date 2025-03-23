@@ -2,21 +2,38 @@
 #include <vector>
 #include <functional>
 #include <math.h>
-#include <utility> 
+#include <utility>
 
 namespace ias
 {
-    class koef
+    class coef
     {
     public:
         std::vector<double> m_c;
-        std::vector<std::vector<double>> m_a;
+        std::vector<double> m_a;
         std::vector<double> m_b;
         int s;
 
-        koef(const std::vector<double> &c,
+        coef(const std::vector<double> &c,
              const std::vector<std::vector<double>> &a,
-             const std::vector<double> &b) : m_c(c), m_a(a), m_b(b), s(m_c.size()) {}
+             const std::vector<double> &b) : m_c(c), m_b(b), s(c.size())
+        {
+            m_a.reserve((s * (s - 1)) / 2);
+            for (int i = 1; i < s; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    m_a.push_back(a[i][j]);
+                }
+            }
+        }
+
+        double get_a(int i, int j) const
+        {
+            if (j >= i) return 0.0;
+            int index = (i * (i - 1)) / 2 + j;
+            return m_a[index];
+        }
     };
 
     [[nodiscard]] std::vector<std::pair<double, double>> runge_kutta(
@@ -24,7 +41,7 @@ namespace ias
         double x0, double y0,
         double x_end,
         double h,
-        const koef &table)
+        const coef &table)
     {
         std::vector<std::pair<double, double>> solution;
         std::pair<double, double> current = {x0, y0};
@@ -43,7 +60,7 @@ namespace ias
 
                 for (int m = 0; m < i; m++)
                 {
-                    arg_y += h * table.m_a[i][m] * k[m];
+                    arg_y += h * table.get_a(i, m) * k[m]; 
                 }
 
                 k[i] = func(arg_x, arg_y);
@@ -81,14 +98,21 @@ int main()
         {0, 0.5, 0, 0},
         {0, 0, 1, 0}};
     std::vector<double> b = {1.0 / 6, 1.0 / 3, 1.0 / 3, 1.0 / 6};
-    ias::koef table(c, a, b);
+    ias::coef table(c, a, b);
 
-    auto solution = ias::runge_kutta(func, x0, y0, x_end, h, table);
-    std::cout << "x\t\ty" << std::endl;
-    for (const auto &point : solution)
+    std::vector<double> vec_res;
+
+    for (double h = 0.00001; h < 2.0; h += 0.00004)
     {
-        printf("X: %10f, Y: %10f\n", point.first, point.second);
+        double max_res = 0.0;
+        auto solution = ias::runge_kutta(func, x0, y0, x_end, h, table);
+        for (auto && point : solution)
+            max_res = std::max(max_res, std::abs(point.second - std::exp(point.first)) / (h * h * h * h));
+        vec_res.push_back(max_res);
     }
+    for (auto && point : vec_res)
+        printf("%lf\n", point);
+
 
     return 0;
 }
