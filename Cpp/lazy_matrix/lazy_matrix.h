@@ -42,7 +42,7 @@ private:
     OperationType m_op;
 
 public:
-    operation(const LHS &lhs, const RHS &rhs, OperationType op) : m_lhs(lhs), m_rhs(rhs), m_op(op) {printf("operation\n");}
+    operation(const LHS &lhs, const RHS &rhs, OperationType op) : m_lhs(lhs), m_rhs(rhs), m_op(op) {}
 
     template <typename _RHS>
     auto operator+(const _RHS &rhs) const
@@ -211,13 +211,12 @@ operation<LHS, RHS>::operator lazy_matrix() const
         }
         return result;
     }
-    else if (m_op == OperationType::Mult)
+    else 
     {
         if (lhs.get_cols() != rhs.get_rows())
         {
             throw std::invalid_argument("Matrix dimensions are not compatible for multiplication.");
         }
-        printf("mult\n");
 
         lazy_matrix result(lhs.get_rows(), rhs.get_cols());
 
@@ -234,9 +233,5 @@ operation<LHS, RHS>::operator lazy_matrix() const
             }
         }
         return result;
-    }
-    else
-    {
-        throw std::invalid_argument("Unsupported operation.");
     }
 }
