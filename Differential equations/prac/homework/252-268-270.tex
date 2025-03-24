@@ -1,0 +1,81 @@
+\section*{Номер 252}
+
+$$ xy' (xy' + y) = 2y^2 $$
+
+\begin{solution}
+    $$ D = x^2 y^2 - 4(-2y^2) \cdot x = x^2 y^2 + 8xy^2 = (3xy)^2 $$
+    $$ y_{1,2}' = \frac{-xy \pm 3xy}{2x^2} \Rightarrow y_1' = -\dfrac{2y}{x}, \quad y_2' = \dfrac{y}{x} $$
+
+    1) $$ y' = -\frac{2y}{x} $$
+    $$ \frac{dy}{dx} = -\frac{2y}{x} $$
+    $$ \int \frac{dy}{y} = \int -\frac{2dx}{x} $$
+    $$ \ln |y| = -2 \ln |x| + \ln C $$
+    $$ y = C x^{-2} $$
+    $$ yx^2 = C $$
+
+    2) $$ y' = \frac{y}{x} $$
+    $$ \frac{dy}{dx} = \frac{y}{x} $$
+    $$ \int \frac{dy}{y} = \int \frac{dx}{x} $$
+    $$ \ln |y| = \ln |x| + \ln C $$
+    $$ y = Cx $$
+\end{solution}\pagebreak
+
+\section*{Номер 268}
+
+$$ x ((y')^2 - 1) = 2y' $$
+
+\begin{solution}
+    $$ x(y')^2 - 2y' - x = 0 \text{ - метод введения параметра.}$$
+    $$ y' = p => \dfrac{dy}{dx} = p \Rightarrow dy = p \cdot dx \Rightarrow dx = \dfrac{dy}{p} $$
+    $$ x(p^2 - 1) = 2p $$
+    $$ x = \dfrac{2p}{p^2 - 1} $$
+    $$ \dfrac{dy}{p} = -2 \dfrac{(p^2 + 1)}{(p^2 - 1)^2} dp $$
+    $$ dy = \dfrac{-2p \cdot (p^2 + 1)}{(p^2 - 1)}dp $$
+    $$ y = -2 \int p \left( \frac{p^2 - 1}{(p^2 - 1)^2} + \frac{2p}{(p^2 - 1)^2} \right) dp $$
+    $$ = -2 \int \frac{p}{p^2 - 1} dp - 2 \int \frac{2p^2}{(p^2 - 1)^2} dp $$
+    $$ = - \int \frac{d (p^2 - 1)}{p^2 - 1} - 2 \int \frac{d (p^2 - 1)}{(p^2 - 1)^2} $$
+    $$ \Rightarrow y = -\ln |p^2 - 1| + \frac{2}{p^2 - 1} + C $$
+
+    $$ x = \frac{2p}{p^2 - 1} $$
+
+    Решение общее, особых нет.
+
+    \textbf{Найдём особое решение:}
+
+    Дифференцируем обе части исходного уравнения по $y'$:
+    $$ 2xy' = 2 \Rightarrow y'' = \frac{X}{x} $$
+    Подставляем в исходное уравнение:
+    $$ x \left( \frac{1}{X^2} \right)^2 - 1 = \frac{2}{x} \Rightarrow 2 \cdot \frac{1}{X^2} = 1 \Rightarrow \frac{1}{X^2} = \frac{1}{2} $$
+    $$ x^2 - 1 \text{ (невозможно)} \Rightarrow \text{особых решений нет} $$
+\end{solution}\pagebreak
+
+\section*{Номер 270}
+$$ y' \cdot (x - \ln y') = 1 $$
+
+\begin{solution}
+    $$ y' \cdot x x - y' \cdot \ln y' = 1 $$
+    $$ x = \ln y' + \dfrac{1}{y'} $$
+    Вести параметр $\dfrac{dy}{dx} = p$
+    $$  = \ln p + \dfrac{1}{p} $$
+    $$ y = \int \left( \frac{1}{p} - \frac{1}{p^2} \right) dp $$
+    $$ = \int 1 - \frac{1}{p} dp $$
+    $$ = p - \ln p + C $$
+    
+    $$ x = \ln p + \frac{1}{p} $$
+    
+    \text{Общее решение, особых решений нет.}
+    
+    \textbf{Найдём особое решение:}
+    
+    Дифференцируем уравнение по $y'$:
+    $$ x - \ln y' - 1 = 1 $$
+    $$ y' = e^{x - 2} $$
+    
+    Подставляем в исходное уравнение:
+    $$ e^{x - 2} \cdot (x - \ln e^{x - 2}) = 1 $$
+    $$ e^{x - 2} \cdot (x - x + 2) = 1 $$
+    $$ e^{x - 2} = \frac{1}{2} $$
+    
+    Такого решения нет, следовательно, особых решений нет.
+\end{solution}
+\pagebreak

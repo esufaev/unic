@@ -1,0 +1,45 @@
+\documentclass[a4paper, 12pt]{article}
+
+% Подключение русского языка.
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+
+% Настройка внешнего вида заголовков.
+\usepackage{titlesec}
+\newcommand{\chapterFont}{\fontsize{16}{15} \selectfont}
+\newcommand{\chapterNumberFont}{\fontsize{14}{15} \selectfont}
+\newcommand{\sectionFont}{\fontsize{14}{15} \selectfont}
+\renewcommand\thesection{\thechapter.\arabic{section}.}
+\titleformat{\chapter}[display]
+{\normalfont \chapterFont \bfseries}{\centering \chapterNumberFont
+	\chaptertitlename \ \thechapter}{10pt}{\centering \chapterFont}
+\titlespacing{\chapter}{0pt}{8pt}{25pt}
+\titleformat{\section}
+{\normalfont \sectionFont \bfseries}{\centering \thesection}{6pt}
+{\centering \sectionFont}
+\titlespacing{\section}{0pt}{25pt}{5pt}
+% Настройка размеров страниц.
+\setlength{\parindent}{0pt} \renewcommand{\baselinestretch}{1.2} \topmargin = 0mm \textwidth =
+175mm \textheight = 260mm \hoffset = -17.5mm \voffset = -25.5mm
+% Подключение библиотек для изображений.
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\usepackage{float}
+% Подключение библиотек для математических символов.
+\usepackage{amsthm}
+\usepackage{parcolumns}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+% Настройка внешнего вида для теорем, утверждений и т.д.
+\theoremstyle{definition}
+\newtheorem*{theorem}{Теорема}
+\newtheorem*{definition}{Определение}
+\newtheorem*{example}{Пример}
+\newtheorem*{remark}{Замечание}
+\newtheorem*{solution}{Решение}
+
+\begin{document}
+\input{lec/1.tex}
+
+\end{document}

@@ -1,0 +1,52 @@
+\section*{Номер 772}
+Рассмотрим дифференциальное уравнение:
+\begin{equation}
+    y'' = f(x)
+\end{equation}
+с граничными условиями:
+\begin{equation}
+    y(0) = 0, \quad y(x) \to 0 \text{ при } x \to +\infty.
+\end{equation}
+
+\begin{solution}
+    \begin{itemize}
+        \item Общее решение уравнения:
+              \begin{equation}
+                  y'' = 0 \Rightarrow y(x) = Ax + B.
+              \end{equation}
+        \item Для области $0 \leq x \leq s$:
+              \begin{equation}
+                  G(x,s) = Ax + B.
+              \end{equation}
+              Условие $G(s,s) = 0$ даёт $B = 0$, следовательно:
+              \begin{equation}
+                  G(x,s) = A x.
+              \end{equation}
+        \item Для области $x > s$:
+              \begin{equation}
+                  G(x,s) = Cx + D.
+              \end{equation}
+              Так как $G(x,s) \to 0$ при $x \to +\infty$, необходимо $C = 0$, откуда:
+              \begin{equation}
+                  G(x,s) = D.
+              \end{equation}
+        \item Условие разрыва первой производной:
+              \begin{equation}
+                  G'(s+0, s) - G'(s-0, s) = 1.
+              \end{equation}
+              Подставляя $G'(x,s)$:
+              \begin{equation}
+                  0 - A = 1 \Rightarrow A = -1.
+              \end{equation}
+              Так как $A s = D$, получаем $D = -s$.
+    \end{itemize}
+
+    Таким образом, функция Грина:
+    \begin{equation}
+        G(x,s) =
+        \begin{cases}
+            -x, & 0 \leq x \leq s, \\
+            -s, & x \geq s.
+        \end{cases}
+    \end{equation}
+\end{solution}\pagebreak

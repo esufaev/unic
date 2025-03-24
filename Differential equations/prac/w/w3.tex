@@ -1,0 +1,67 @@
+\section*{Нелинейные системы}
+1 способ. Метод исключения неизвестных. \par
+2 способ. Решение путем отыскания интег интеграций. Пример:
+$$ \dfrac{dx}{xz} = \dfrac{dy}{yz} = \dfrac{dz}{-xy} = dt $$
+$$ \begin{cases}
+        \dfrac{dx}{dt} = xz \\
+        \dfrac{dy}{dt} = yz \\
+        \dfrac{dz}{dt} = -xy
+    \end{cases} $$
+
+$$ \begin{cases}
+        x = xy \\
+        y = yz \\
+        z = -xy
+    \end{cases} $$
+
+$$ \dfrac{dx}{xz} = \dfrac{dy}{yz} $$
+$$ \ln{|x|} = \ln{|y|} + C $$
+$$ x = Cy $$
+$$ \dfrac{x}{y} = C $$
+$$ \dfrac{dx}{xz} = \dfrac{dy}{yz} = \dfrac{dz}{-xy} = \dfrac{ydx + xdy}{xyz + xyz} $$
+$$ -z^2 = xy - C _2 $$
+$$
+    \begin{cases}
+        \dfrac{x}{y} = C_1 
+        z^2 + xy = C_2 
+    \end{cases}
+$$
+
+Обозначим левые части как $ \phi_1 и \phi_2 $ соответственно. Тогда:
+
+$$
+    \begin{vmatrix}
+        \dfrac{\delta \phi_1}{\delta x} & \dfrac{\delta \phi_1}{\delta y} \\
+        \dfrac{\delta \phi_2}{\delta x} & \dfrac{\delta \phi_2}{\delta y}
+    \end{vmatrix} \not\equiv 0
+$$
+
+% \section*{Номер 1141}
+% $$
+%     \begin{cases}
+%         y' = \dfrac{x}{z} \\
+%         z' = -\dfrac{x}{y}
+%     \end{cases}
+% $$
+
+% $$
+%     \begin{cases}
+%         x = y'z \\
+%         x = -y z'
+%     \end{cases}
+% $$
+
+$$ u' = F(t, u) $$
+$$ \dfrac{\delta \phi}{\delta t} + \sum_{i} \dfrac{\delta \phi}{\delta u_i} F(t, u) = 0 $$
+\section*{Номер 1161}
+$$ \begin{cases}
+    \dfrac{dx}{dt} = \dfrac{x^2 - t}{y} = F_1 \\
+    \dfrac{dy}{dt} = -x = F_2
+\end{cases} $$
+$\phi_1 = t^2 + 2xy, \phi_2 = x^2 - ty$\par
+$$ \dfrac{\delta \phi_1}{\delta t} = 2t  $$
+$$ \dfrac{\delta \phi_1}{\delta x} = 2y $$
+$$ \dfrac{\delta \phi_1}{\delta y} = 2x $$
+Тогда: 
+$$ 2t + 2y \cdot \dfrac{x^2 - t}{y} + 2x \cdot (-x) = 0 $$
+$$ 0 = 0 $$

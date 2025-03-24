@@ -1,0 +1,196 @@
+\section*{Элементы теории поля}
+
+\begin{definition}
+    Пусть $ G $ область в пространстве $ \mathbb{R}^{3} $. Говорят, что в области $ G $ задано скалярное поле, если каждой точке
+    $ M \in G $ поставлено в соответствие число $ u(M) = u(x, y, z) $. В области $ G $ заданно векторное поле, если каждой точке
+    $ M \in G $ поставлен в соответствие вектор $ \vec{a}(M) = P(x, y, z)\vec{i} + Q(x, y, z)\vec{j} + R(x, y, z)\vec{k} $.
+    Аналогично определяются скалярные и векторные поля в области $ G \subset \mathbb{R}^{2} $. Будем говорить, что скалярные
+    и векторные поля $ u(M) $ и $ \vec{a}(M) $ обладают некоторым свойством, если этим свойством обладают функции $ u(x,y,z) $,
+    $ P(x,y,z) $, $ Q(x,y,z) $, $ R(x,y,z) $.
+\end{definition}
+
+\begin{definition}
+    Векторное поле называется дифференцируемым в области $ G $, если дифференцируемы $ P $, $ Q $, $ R $.
+\end{definition}
+
+\begin{definition}
+    Пусть $ u(M) $ дифференцируема в области $ G \subset \mathbb{R}^{3} $ скалярное поле. Векторное поле
+    \begin{equation} \nonumber
+        \text{grad}(u) = \frac{\partial u}{\partial x} \vec{i} + \frac{\partial u}{\partial y} \vec{j} + \frac{\partial u}{\partial z} \vec{k}
+    \end{equation}
+    называется градиентом скалярного поля $ u(M) $ в $ G $.
+\end{definition}
+
+\begin{remark}
+    Многие понятия теории поля удобно записывать, используя символический вектор Гамильтона "набла" $ \nabla $:
+    \begin{equation} \nonumber
+        \nabla = \vec{i} \frac{\partial}{\partial x} + \vec{j} \frac{\partial}{\partial y} + \vec{k} \frac{\partial}{\partial z}.
+    \end{equation}
+\end{remark}
+
+\begin{remark}
+    Тогда получим, что
+    \begin{equation} \nonumber
+        \text{grad}(u) = \nabla u.
+    \end{equation}
+    Правая часть понимается как умножение вектора на "число". Сам вектор набла не имеет реального значения, а
+    приобретает это значение комбинацией со скалярными или векторными функциями.
+\end{remark}
+
+\begin{definition}
+    Пусть даны скалярное поле $ u(M) $ дифференцируемое в области $ G $, точка $ M_{0} \in G $ и направление $ \vec{e}\left(
+        \cos(\alpha), \cos(\beta), \cos(\gamma)\right) $. Производной поля $ u(M) $ в точке $ M_{0} $ по направлению $ \vec{e} $
+    называется число
+    \begin{equation} \nonumber
+        \frac{\partial u}{\partial \vec{e}}(M_{0}) = \frac{\partial u}{\partial x}(M_{0})\cos(\alpha) + \frac{\partial u} {\partial y}(M_{0})\cos(\beta) + \frac{\partial u}{\partial z}(M_{0})\cos(\gamma).
+    \end{equation}
+\end{definition}
+
+\begin{remark}
+    \begin{equation} \nonumber
+        \frac{\partial u}{\partial \vec{e}} = \text{grad}(u) \cdot \vec{e},
+    \end{equation}
+    Здесь $ \cdot $ --- скалярное произведение в $ \mathbb{R}^{3} $.
+\end{remark}
+
+\begin{theorem}
+    Производная скалярного поля $ u(M) $ в точке $ M_{0} $ по направлению, определяемому вектором $ \text{grad}(u) $ в точке $ M_{0} $
+    имеет наибольшее значение по сравнению с производной $ u(M) $ в точке $ M_{0} $ по любому другому направлению. Значение производной
+    $ u(M) $ в точке $ M_{0} $ по направлению $ \text{grad}(u(M_{0})) $ равно $ |\text{grad}(u(M_{0}))| $.
+\end{theorem}
+\begin{proof}
+    Пусть $ \varphi $ угол между $ \vec{e} $ и $ \vec{\text{grad}}(u(M_{0})) $. Тогда
+    \begin{equation} \nonumber
+        \frac{\partial u}{\partial \vec{e}}(M_{0}) = \vec{\text{grad}}u(M_{0}) \cdot \vec{e} =
+        |\vec{\text{grad}}u(M_{0})| |\vec{e}| \cos\varphi = |\vec{\text{grad}}u(M_{0})|
+        \cos\varphi.
+    \end{equation}
+    Значение производной максимально, если $ \cos\varphi = 1 $. Тогда $ \varphi = 0 $. Значит направление вектора
+    $ \vec{\text{grad}}(u(M_{0})) $ совпадает с направлением вектора $ \vec{e} $ и
+    \begin{equation} \nonumber
+        \frac{\partial u}{\partial \vec{e}}(M_{0}) = |\vec{\text{grad}}u(M_{0})|.
+    \end{equation}
+\end{proof}
+
+\begin{definition}
+    Пусть в области $ G $ заданно векторное поле $ \vec{a} = \vec{a}(M) $ и существует определенная в $ G $ функция $ u = u(M) $
+    такая, что
+    \begin{equation} \nonumber
+        \vec{a} = \vec{\text{grad}}u.
+    \end{equation}
+    Тогда функция $ u $ называется потенциалом векторного поля $ \vec{a} $.
+\end{definition}
+
+\begin{example}
+    Пусть дан вектор $ \vec{r} $. Разложим его по базису:
+    \begin{equation} \nonumber
+        \vec{r} = x \vec{i} + y \vec{j} + z \vec{k}, \qquad |\vec{r}| = \sqrt{x^{2} + y^{2} + z^{2}}.
+    \end{equation}
+    \begin{equation} \nonumber
+        \vec{a} = \frac{\vec{r}}{|\vec{r}|^{3}} = \frac{x}{|\vec{r}|^{3}} \vec{i} + \frac{y}{|\vec{r}|^{3}} \vec{j} +
+        \frac{z}{|\vec{r}|^{3}} \vec{k}.
+    \end{equation}
+    Пусть $ G = \mathbb{R}^{3} \setminus (0,0,0) $. Тогда функция $ u = =\frac{1}{|\vec{r}|} $ является потенциалом
+    векторного поля $ \vec{a} $ в множестве $ G $.
+\end{example}
+
+\begin{definition}
+    Пусть векторное поле $ \vec{a} = P\vec{i} + Q\vec{j} + R\vec{k} $ дифференцируемо в области $ G $. Тогда скалярное поле
+    \begin{equation} \nonumber
+        \text{div}\vec{a} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}
+    \end{equation}
+    называется дивергенцией векторного поля $ \vec{a} $ в области $ G $.
+\end{definition}
+
+\begin{remark}
+    Дивергенция поля может быть записана как "скалярное произведение" векторов набла и $ \vec{a} $:
+    \begin{equation} \nonumber
+        \text{div}\vec{a} = \nabla \cdot \vec{a}.
+    \end{equation}
+\end{remark}
+
+\begin{definition}
+    Пусть векторное поле $ \vec{a} = P\vec{i} + Q\vec{j} + R\vec{k} $ дифференцируемо в области $ G $. Ротором (вихрем) векторного
+    поля $ \vec{a} $ называется векторное поле:
+    \begin{equation} \nonumber
+        \text{rot}\vec{a} = \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right)\vec{i} + \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right) \vec{j} + \left(\frac{\partial Q} {\partial x} - \frac{\partial P}{\partial y}\right)\vec{k}.
+    \end{equation}
+\end{definition}
+
+\begin{remark}
+    Ротор поля $ \vec{a} $ можно записать как "векторное произведение" оператора набла на $ \vec{a} $:
+    \begin{equation} \nonumber
+        \text{rot}\vec{a} = \nabla \times \vec{a} =
+        \begin{vmatrix}
+            \vec{i}                     & \vec{j}                     & \vec{k}                     \\
+            \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ P & Q & & R
+        \end{vmatrix}.
+    \end{equation}
+\end{remark}
+
+\begin{definition}
+    Векторное поле $ \vec{a} $, заданное в области $ G $ называется без вихревым, если
+    \begin{equation} \nonumber
+        \text{rot}\vec{a} = \vec{0}.
+    \end{equation}
+\end{definition}
+
+\begin{definition}
+    Пусть $ \vec{a} = P\vec{i} + Q\vec{j} + R\vec{k} $ векторное поле непрерывное в области $ G $, $ \gamma $
+    ориентированный гладкий контур $ G $. Интеграл
+    \begin{equation} \nonumber
+        \oint\limits_{\gamma} Pdx + Qdy + Rdz
+    \end{equation}
+    называется циркуляцией векторного поля $ \vec{a} $ по контуру $ \gamma $. Обозначение:
+    \begin{equation} \nonumber
+        \oint\limits_{\gamma} \vec{a} \cdot d\vec{r}, \qquad d\vec{r} = dx\vec{i} + dy\vec{j} + dz\vec{k}.
+    \end{equation}
+\end{definition}
+
+\begin{definition}
+    Векторное поле $ \vec{a} $ заданное в области $ G $ называется потенциальным, если циркуляция $ \vec{a} $
+    по любому гладкому контуру, лежащему в $ G $ равна нулю.
+\end{definition}
+
+\begin{definition}
+    Говорят, что поверхность $ S $ натянута на гладкий контур $ \Gamma $, если существует ориентированная
+    гладкая поверхность, лежащая в $ G $ и имеющая контур $ \Gamma $ своей границей.
+\end{definition}
+
+\begin{definition}
+    Пусть $ G \subset \mathbb{R}^{3} $ заданно непрерывное векторное поле $ \vec{a} = P\vec{i} + Q\vec{j} + R\vec{k} $. $ S $ ---
+    гладкая ориентированная поверхность $ G $, ориентация которой определяется единичным вектором нормали $ \vec{n}(\cos\alpha,
+        \cos\beta, \cos\gamma) $. Потоком векторного поля $ \vec{a} $ через поверхность $ S $ называется
+    \begin{equation} \nonumber
+        \iint\limits_{S} \left(P\cos(\alpha) + Q\cos(\beta) + R\cos(\gamma)\right)ds = \iint\limits_{S} \vec{a} \cdot \vec{n} ds.
+    \end{equation}
+\end{definition}
+
+\begin{theorem}
+    Пусть область $ V \subset \mathbb{R}^{3} $ правильная относительно всех координатных плоскостей. Пусть границей $ V $ является
+    гладкая поверхность $ S $, ориентированная вектором внешней нормали $ \vec{n} $. Пусть в $ V $ заданно дифференцируемое
+    векторное поле $ \vec{a} $. Тогда
+    \begin{equation} \nonumber
+        \iint\limits_{S} \vec{a} \cdot \vec{n}ds = \iiint\limits_{V} \text{div}\vec{a}dxdydz
+    \end{equation}
+    формула Остроградского-Гаусса в терминах теории поля. Поток векторного поля через границу $ S $ области $ V $ равняется
+    тройному интегралу от дивергенции поля $ \vec{a} $.
+\end{theorem}
+
+\begin{example}
+    Найти поток векторного поля $ \vec{a} = (x-1)^{3}\vec{i} + (y+2)^{3}\vec{j} + (z-2)^{3}\vec{k} $  через
+    внешнюю сторону сферы $ (x-1)^{2} + (y+2)^{2} + (z-2)^{2} = R^{2} $.
+    \begin{equation} \nonumber
+        V = \{ (x, y, z) \in \mathbb{R}^{3} : (x-1)^{2} + (y+2)^{2} + (z-2)^{2} \leq R^{2} \}, \qquad
+        S = \{ (x, y, z) \in \mathbb{R}^{3} : (x-1)^{2} + (y+2)^{2} + (z-2)^{2} = R^{2} \}.
+    \end{equation}
+    \begin{equation} \nonumber
+        \iint\limits_{S} \vec{a} \vec{n}ds = \iiint\limits_{V} \text{div}\vec{a}dxdydz = \iiint\limits_{V} \left(
+        3(x-1)^{2} + 3(y+2)^{2} + 3(z-2)^{2}\right)dxdydz =
+    \end{equation}
+    Сделаем замену $ x-1 = 2\cos\varphi \cos\psi $, $ y + 2 = 2\sin\varphi \cos\psi $, $ z - 2 = 2\sin\psi $:
+    \begin{equation} \nonumber
+        = 3 \int\limits_{0}^{2\pi} d\varphi \int\limits_{-\pi/2}^{\pi/2} d\psi \int\limits_{0}^{R} r^{2}\cos\gamma r^{2} dr =
+        \frac{12}{5} \pi R^{5}.
+    \end{equation}
+\end{example}\pagebreak
