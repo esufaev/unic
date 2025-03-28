@@ -3,27 +3,27 @@
 \begin{definition}
     Уравнением в частных производных 2 порядка называют
     $$ \sum_{i, j = 1}^{n} a_{ij} \dfrac{\delta ^ 2 u}{\delta x_i \delta x_j} + \sum_{i = 1}^{n} b_i \dfrac{\delta u}{\delta x_i} + cu + f(x) = 0 $$
-    $$ u = u(x_1, \cdots, x_n), c = c(x), a_{ij} = a_{ij} (x), b_i = b_i(x) $$
+    $$ u = u(x_1, \ldots, x_n), c = c(x_1, \ldots, x_n), a_{ij} = a_{ij} (x_1, \ldots, x_n), b_i = b_i(x_1, \ldots, x_n) $$
 \end{definition}
 Если $ u, c, a_{ij}, b_{i} = \text{const} \quad \forall i, j $, то
 уравнение имеет пстоянные коэфициенты. \par
 Рассмотрим случай $n = 2$:
 $$ a_{11} (x, y) \dfrac{\delta ^ 2 u}{\delta x^2} + 2 a_{12}(x, y) \dfrac{\delta ^ 2 u}{\delta x \delta y} + a_{22} (x, y) \dfrac{\delta ^ 2 u}{\delta y^2} + F(f(x, y), \dfrac{\delta u}{\delta x}, \dfrac{\delta u}{\delta y}, u) = 0 $$
 \begin{remark}
-    Принято писать $\dfrac{\delta u}{\delta x} = u_x, \dfrac{\delta ^ 2 u}{\delta x \delta y} = u_{xy}, \dfrac{\delta ^ 2 u}{\delta x ^ 2} = u_{xx}, \cdots. $
+    Принято писать $\dfrac{\delta u}{\delta x} = u_x, \dfrac{\delta ^ 2 u}{\delta x \delta y} = u_{xy}, \dfrac{\delta ^ 2 u}{\delta x ^ 2} = u_{xx}, \ldots. $
 \end{remark}
 
 Сделаем замену переменных: $ \xi = \phi (x, y), \quad \eta = \psi (x, y) $. И так как они линейно независимы:
-$$ \mathbb{J} = \begin{vmatrix}
+$$ \mathcal{J} = \begin{vmatrix}
         \dfrac{\delta \phi}{\delta x} & \dfrac{\delta \phi}{\delta y} \\
         \dfrac{\delta \psi}{\delta x} & \dfrac{\delta \psi}{\delta y}
     \end{vmatrix} \neq 0 $$
 $$ u_x = \xi_x u_\xi + \eta_x u_\eta $$
 $$ u_{xx} = (\xi_x u_\xi + \eta_x u_\eta)_x = u_{\xi \xi} \xi^2_x + 2u_{\xi \eta} \xi_x \eta_x + u_{\eta \eta} \eta^2_x + u_\xi \xi_{xx} + u_\eta \eta_{xx} $$
 $$ u_{yy} = (\xi_y u_\xi + \eta_y u_\eta)_y = u_{\xi \xi} \xi^2_y + 2u_{\xi \eta} \xi_y \eta_y + u_{\eta \eta} \eta^2_y + u_\xi \xi_{y} + u_\eta \eta_{yy} $$
-$$ u_{xy} = (u_\xi \xi_x + u_\eta \eta_x)_y = \cdots. $$
+$$ u_{xy} = (u_\xi \xi_x + u_\eta \eta_x)_y = \ldots. $$
 Подставляя это в исходное уравнение, мы получим:
-$$ u_{\xi \xi}' \overbrace{[a_{11}(\xi_x)^2 + a_{12} \xi_x \xi_y + a_{22} (\xi_y)^2]}^{\tilde{a}_{11}} + u_{\eta \eta} \overbrace{[a_{11} (\eta_x)^2 + 2 a_{12} \eta_x \eta_y + a_{22} (\eta_y)^2]}^{\tilde{a}_{22}} + $$
+$$ u_{\xi \xi} \overbrace{[a_{11}(\xi_x)^2 + a_{12} \xi_x \xi_y + a_{22} (\xi_y)^2]}^{\tilde{a}_{11}} + u_{\eta \eta} \overbrace{[a_{11} (\eta_x)^2 + 2 a_{12} \eta_x \eta_y + a_{22} (\eta_y)^2]}^{\tilde{a}_{22}} + $$
 $$ + u_{\eta \xi} \overbrace{[2 a_{11} \xi_x \eta_x + 2 a_{22} \xi_y \eta_y + 2a_{12} ( \xi_x \eta_y + \xi_y \eta_x )]}^{\tilde{a}_{12}} + \tilde{F} (\xi, \eta, u, u_\xi, u_\eta) = 0 $$
 Итого, получаем:
 $$ a_{11} (\xi_x)^2 + 2 a_{12} \xi_x \xi_y + a_{22} (\xi_y)^2 = 0 $$
@@ -183,4 +183,4 @@ $$ u_{\xi \xi} + u_{\eta \eta} + \tilde{F}(\xi, \eta, u, u_\xi, u_\eta) = 0. $$
 \begin{example}
     Рассмотрим уравнение $\overbrace{5}^{a_{11}} u_{xx} + \overbrace{4}^{2 a_{12} \implies a_{12} = 2} u_{xy} + \overbrace{1}^{a_{22}} u_{yy} + u_x + u_y = 0$. Снова делаем замену, находим $u_{xx}, u_{xy}, u_{yy}, u_x, u_y$ и после подстановки получаем \textbf{ответ}:
     $$ u_{\xi \xi} + u_{\eta \eta} + \dfrac{3}{5} u_\xi + \dfrac{1}{5} u_\eta = 0. $$
-\end{example}
+\end{example}\pagebreak
