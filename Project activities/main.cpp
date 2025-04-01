@@ -137,7 +137,6 @@ std::vector<double> exact_solution(double x)
 
 int main()
 {
-    // Constants
     double C = 0.2;
     double rho = 1.29;
     double S = 0.25;
@@ -148,7 +147,6 @@ int main()
     double m0 = 30.0;      // kg
     double t_burn = 4.0;   // s
 
-    // RK4 coefficients
     std::vector<double> c = {0.0, 0.5, 0.5, 1.0};
     std::vector<std::vector<double>> a = {
         {0.0, 0.0, 0.0, 0.0},
@@ -158,7 +156,6 @@ int main()
     std::vector<double> b = {1.0 / 6.0, 1.0 / 3.0, 1.0 / 3.0, 1.0 / 6.0};
     ias::coef table(c, a, b);
 
-    // Find optimal theta0
     double max_range = 0.0;
     double best_theta0 = 0.0;
 
@@ -166,7 +163,6 @@ int main()
     {
         double theta0 = theta0_deg * M_PI / 180.0;
 
-        // Define ODE function
         auto func = [theta0, C, rho, S, g, mu, T_thrust, m0, t_burn](double t, const std::vector<double> &u)
         {
             double v = std::sqrt(u[1] * u[1] + u[3] * u[3]);
@@ -193,15 +189,13 @@ int main()
             return std::vector<double>{u[1], u2p, u[3], u4p};
         };
 
-        // Initial conditions
         std::vector<double> y0 = {0.0, v0 * std::cos(theta0), 0.0, v0 * std::sin(theta0)};
         double h = 0.01;
         double x0 = 0.0;
-        double x_end = 100.0; // Large enough to ensure landing
+        double x_end = 100.0; 
 
         auto solution = ias::runge_kutta(func, x0, y0, x_end, h, table);
 
-        // Find landing point
         size_t n = 0;
         for (n = 1; n < solution.size(); n++)
         {
@@ -210,7 +204,7 @@ int main()
         }
 
         if (n < solution.size() && n > 1)
-        { // Ensure we have a previous point
+        {
             double range = solution[n - 1].second[0];
             if (range > max_range)
             {
@@ -223,7 +217,6 @@ int main()
     std::cout << "Optimal theta0: " << best_theta0 << " degrees\n";
     std::cout << "Maximum range: " << max_range << " meters\n";
 
-    // Compute trajectory for best_theta0
     double theta0 = best_theta0 * M_PI / 180.0;
     auto func = [theta0, C, rho, S, g, mu, T_thrust, m0, t_burn](double t, const std::vector<double> &u)
     {
@@ -257,7 +250,6 @@ int main()
     double x_end = 100.0;
     auto solution = ias::runge_kutta(func, x0, y0, x_end, h, table);
 
-    // Output trajectory
     std::cout << "\nTrajectory (t, x, y):\n";
     size_t n = 0;
     for (n = 1; n < solution.size(); n++)
