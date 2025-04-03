@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <numeric>
 #include <limits>
+#include <random>
 #include <functional>
 
 namespace utils
@@ -67,46 +68,42 @@ namespace searches
     }
 
     template <typename T>
-    int binary_search_recursive_(const std::vector<T> &vec, const T &value, size_t left, size_t right)
+    int binary_search_recursive(const std::vector<T> &vec, const T &value, size_t left, size_t right)
     {
         if (left > right) return -1;
         size_t mid = left + (right - left) / 2;
         if (vec[mid] == value) return mid;
-        else if (vec[mid] < value) return binary_search_recursive_(vec, value, mid + 1, right);
-        else return binary_search_recursive_(vec, value, left, mid - 1);
-    }
-
-    template <typename T>
-    size_t binary_search_recursive(const std::vector<T> &vec, const T &value)
-    {
-        return binary_search_recursive_(vec, value, 0, vec.size() - 1);
+        else if (vec[mid] < value) return binary_search_recursive(vec, value, mid + 1, right);
+        else return binary_search_recursive(vec, value, left, mid - 1);
     }
 }
 
 int main()
 {
-    constexpr size_t size = 100000000;
+    std::srand(std::time(0));
+    constexpr auto size = 100000000;
     std::vector<int> vec(size);
-    std::iota(vec.begin(), vec.end(), 0);
+    for (int i = 0; i < size; ++i) vec[i] = std::rand() % 10001;
+    std::sort(vec.begin(), vec.end());
+    constexpr auto value = 0;
 
-    int value = vec[size / 2];
+    const size_t n = 1;
 
-    const size_t n = 1000;
+    // auto time_linear = utils::time_it<std::chrono::nanoseconds>(n, [] {}, [&]()
+    //                                                             { volatile auto res = searches::linear_search<int>(vec, value); });
+    // printf("Linear search: %lld ns\n", time_linear.count());
 
-    auto time_linear = utils::time_it<std::chrono::nanoseconds>(n, [] {}, searches::linear_search<int>, vec, value);
-    printf("Linear search: %lld ns\n", time_linear.count());
-
-    auto time_binary_loop = utils::time_it<std::chrono::nanoseconds>(n, [] {}, searches::binary_search_loop<int>, vec, value);
+    auto time_binary_loop = utils::time_it<std::chrono::nanoseconds>(n, [] {}, [&]()
+                                                                     { volatile auto res = searches::binary_search_loop<int>(vec, value); });
     printf("Binary search loop: %lld ns\n", time_binary_loop.count());
 
-    auto time_binary_recursive = utils::time_it<std::chrono::nanoseconds>(n, [] {}, searches::binary_search_recursive<int>, vec, value);
+    auto time_binary_recursive = utils::time_it<std::chrono::nanoseconds>(n, [] {}, [&]()
+                                                                          { volatile auto res = searches::binary_search_recursive<int>(vec, value, 0, vec.size() - 1); });
     printf("Binary search recursive: %lld ns\n", time_binary_recursive.count());
 
     auto time_std_binary = utils::time_it<std::chrono::nanoseconds>(n, [] {}, [&]()
-                                                                    { std::binary_search(vec.begin(), vec.end(), value); });
+                                                                    { volatile auto res = std::binary_search(vec.begin(), vec.end(), value); });
     printf("Std binary search: %lld ns\n", time_std_binary.count());
-
-    return 0;
 
     return 0;
 }
