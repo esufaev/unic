@@ -1,0 +1,141 @@
+\documentclass[a4paper, 12pt]{article}
+
+% Подключение русского языка.
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+
+% Настройка внешнего вида заголовков.
+\usepackage{titlesec}
+\newcommand{\chapterFont}{\fontsize{16}{15} \selectfont}
+\newcommand{\chapterNumberFont}{\fontsize{14}{15} \selectfont}
+\newcommand{\sectionFont}{\fontsize{14}{15} \selectfont}
+\renewcommand\thesection{\thechapter.\arabic{section}.}
+\titleformat{\chapter}[display]
+{\normalfont \chapterFont \bfseries}{\centering \chapterNumberFont
+    \chaptertitlename \ \thechapter}{10pt}{\centering \chapterFont}
+\titlespacing{\chapter}{0pt}{8pt}{25pt}
+\titleformat{\section}
+{\normalfont \sectionFont \bfseries}{\centering \thesection}{6pt}
+{\centering \sectionFont}
+\titlespacing{\section}{0pt}{25pt}{5pt}
+% Настройка размеров страниц.
+\setlength{\parindent}{0pt} \renewcommand{\baselinestretch}{1.2} \topmargin = 0mm \textwidth =
+175mm \textheight = 260mm \hoffset = -17.5mm \voffset = -25.5mm
+% Подключение библиотек для изображений.
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\usepackage{float}
+% Подключение библиотек для математических символов.
+\usepackage{amsthm}
+\usepackage{parcolumns}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+% Настройка внешнего вида для теорем, утверждений и т.д.
+\theoremstyle{definition}
+\newtheorem*{theorem}{Теорема}
+\newtheorem*{definition}{Определение}
+\newtheorem*{example}{Пример}
+\newtheorem*{remark}{Замечание}
+\newtheorem*{solution}{Решение}
+
+\begin{document}
+
+\begin{example}
+
+    $$ f(x_1, x_2, x_3) = 3x_1^2 + 3x_2^2 + 3x_3^2 + 6x_1x_2 - 6x_1x_3 - x_2x_3 = $$
+    $$ = (3x_1^2 + 66x_1x_2 - 6x_1x_3) + 3x_2^2 + 3x_3^2 - x_2x_3 =  $$
+    $$ = [3(x_1^2 + 2x_1x_2 - 2x_1x_3)] + 3x_2^2 + 3x_3^2 - x_2x_3 = $$
+    $$ = [3(x_1 + 2x_1(x_2 - x_3) + (x_2 - x_3)^2)] - 3(x_2 - x_3)^2 + 3x_2^2 + 3x_3^2 - x_2x_3 = $$
+    $$ [3(x_1 + x_2 - x_3)^2] + 6x_2x_3 - x_2x_3 = 3(x_1 + x_2 - x_3)^2 + 5x_2x_3 $$
+
+    Замена: $ \begin{cases}
+            y_1 = x_1 + x_2 - x_3 \\
+            y_2 = x_2             \\
+            y_3 = x_3             \\
+        \end{cases} $
+
+    $$ 3y_1^2 + 3y_2y_3  $$
+
+    Замена: $ \begin{cases}
+            y_1 = x_2       \\
+            y_2 = z_2 - z_3 \\
+            y_3 = z_2 + z_3 \\
+        \end{cases} $
+
+    $$ 3z_1^2 + 5z_2^2 - 5z_3^2 $$
+    Пусть $x = S_1 y$ и $y = S_2 z \Rightarrow x = S_1 S_2 z = S z$
+
+    $ \begin{cases}
+            x_1 = y_1 - y_2 + y_3 \\
+            x_2 = y_2             \\
+            x_3 = y_3
+        \end{cases}$ и $ S_1 = \begin{pmatrix}
+            1 & -1 & 1 \\
+            0 & 1  & 0 \\
+            0 & 0  & 1 \\
+        \end{pmatrix} \cdot \begin{pmatrix}
+            1 & 0 & 0  \\
+            0 & 1 & -1 \\
+            0 & 1 & 1  \\
+        \end{pmatrix} $
+\end{example}
+\par
+\begin{example}
+    $$ f(x_1, x_2, x_3) = x_1 x_2 + x_1 x_2 + x_2 x_3 = $$
+    $$ = t_1^2 - t_2^2 + t_1t_3 +t_2t_3 + t_1t_3 - t_2t_3 = t_1^2 - t_2^2 + 2t_1 t_3 = (t_1 + t_3)^2 - t_2^2 - t_3^2 = $$
+    $$ S_1: \begin{cases}
+            x_1 = t_1 + t_2 \\
+            x_2 = t_1 - t_2 \\
+            x_3 = t_3
+        \end{cases} \Rightarrow S_1 = \begin{pmatrix}
+            1 & 1  & 0 \\
+            1 & -1 & 0 \\
+            0 & 0  & 1 \\
+        \end{pmatrix} \text{ и } S_2: \begin{cases}
+            z_1 = t_1 + t_3 \\
+            z_2 = t_2       \\
+            z_3 = t_3       \\
+        \end{cases} \Rightarrow S_2 = \begin{pmatrix}
+            1 & 0 & -1 \\
+            0 & 1 & 0  \\
+            0 & 0 & 1  \\
+        \end{pmatrix}$$
+
+    $$ S_1 \cdot S_2 = \begin{pmatrix}
+            1 & 1  & 0 \\
+            1 & -1 & 0 \\
+            0 & 0  & 1 \\
+        \end{pmatrix} \cdot \begin{pmatrix}
+            1 & 0 & -1 \\
+            0 & 1 & 0  \\
+            0 & 0 & 1  \\
+        \end{pmatrix} = \begin{pmatrix}
+            1 & 1  & -1 \\
+            1 & -1 & -1 \\
+            0 & 0  & 1
+        \end{pmatrix} $$
+
+\end{example}
+
+\section*{Привидение к каноничному виду}
+
+    Рассмотрим ДУ 2 порядка:
+    $$ \sum_{i, j = 1}^{n} a_{ij} u_{xi} u_{xj} + \sum_{i = 1}^{n} b_i u_{xi} + cu + f = 0 $$
+    $$ u = u(x_1, x_2, \ldots, x_n) $$
+    $$ \sum_{i = 1}^{n} \tilde{a_i} u_{xi} u_{xi} + \sum_{i = 1}^{n} \tilde{b} u_{xi} + \tilde{c} u + \tilde{f} = 0 $$
+    
+    Метод Лагранжа
+    \begin{definition}
+        Для уравнения (1) форма вида $ \sum_{i, j = 1}^{n} a_{ij} x_i x_j $ называется характеристической квадратичной формой. Эту форму нужно привести к каноническому виду $ F = \sum_{i = 1}^{n} \alpha_i x_i^2 $.
+    \end{definition}    
+
+    \begin{example}
+        Номер 101 \par
+        $$ u_{xx} + 2u_{xy} + 2u_{yy} + 4u_{yz} + 5u_{zz} = 0 $$
+        $$ x^2 + 2xy + 2yy + 4yz + 5z^2 = 0 $$
+        $$ (x^2 + 2xy + y^2) - y^2 + 2y^2 + 4yz + 5z^2 = 0 $$
+        $$ (x + y)^2 + y^2 + 4yz + 5z^2 = 0 \Rightarrow  $$
+    \end{example} \pagebreak
+    \input{homework/1.tex}
+\end{document}
